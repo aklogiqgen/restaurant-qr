@@ -4,6 +4,7 @@
   "description": "Restaurant ordering system backend with real-time updates",
   "main": "server.js",
   "scripts": {
+    "build": "npm install",
     "start": "node server-postgres.js",
     "dev": "nodemon server-postgres.js",
     "init-db": "node database/init.js",
