@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { API_BASE_URL } from './config';
 
 const MenuOrderPage = () => {
   const [searchParams] = useSearchParams();
@@ -15,7 +16,7 @@ const MenuOrderPage = () => {
   const [showCart, setShowCart] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const API_URL = 'http://localhost:5001';
+  const API_URL = API_BASE_URL;
 
   const categories = [
     { id: 'all', label: 'All', icon: '🍽️', color: 'from-purple-500 to-pink-500' },

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import io from 'socket.io-client';
+import { API_BASE_URL } from './config';
 
 // Order Status Component with Real-time Updates
 const OrderStatusTracker = ({ tableNo, orderId, orderData }) => {
@@ -45,7 +46,7 @@ const OrderStatusTracker = ({ tableNo, orderId, orderData }) => {
 
   // Initialize Socket.io connection
   useEffect(() => {
-    const newSocket = io('http://localhost:5001', {
+    const newSocket = io(API_BASE_URL, {
       transports: ['websocket'],
       reconnection: true
     });

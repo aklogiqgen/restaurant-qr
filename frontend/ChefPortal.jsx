@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import io from 'socket.io-client';
 import axios from 'axios';
+import { API_BASE_URL } from './config';
 
 const ChefPortal = () => {
   const [orders, setOrders] = useState([]);
@@ -14,7 +15,7 @@ const ChefPortal = () => {
     served: 0
   });
 
-  const API_URL = 'http://localhost:5001';
+  const API_URL = API_BASE_URL;
 
   const statusColors = {
     pending: 'bg-yellow-500',

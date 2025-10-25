@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import io from 'socket.io-client';
+import { API_BASE_URL } from './config';
 
 const ChatbotPage = () => {
   const [searchParams] = useSearchParams();
@@ -18,7 +19,7 @@ const ChatbotPage = () => {
   const [socket, setSocket] = useState(null);
   const messageIdCounter = React.useRef(0);
 
-  const API_URL = 'http://localhost:5001';
+  const API_URL = API_BASE_URL;
 
   // Status configuration
   const statusConfig = {

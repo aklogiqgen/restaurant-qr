@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import { API_BASE_URL } from './config';
 
 const QRCodesPage = () => {
   const [qrCodes, setQrCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
-
-  const API_BASE_URL = 'http://localhost:5001';
 
   useEffect(() => {
     fetchQRCodes();
